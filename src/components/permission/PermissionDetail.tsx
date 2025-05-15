@@ -1,4 +1,4 @@
-import type { Permission } from "../../types/entity.ts";
+import type { Permission } from '../../types/entity.ts';
 
 function PermissionDetail({ permission }: { permission: Permission }) {
   return (
@@ -7,16 +7,16 @@ function PermissionDetail({ permission }: { permission: Permission }) {
         <table>
           <tbody>
             <tr>
-              <td className={"px-1"}>ID:</td>
-              <td className={"px-1 font-mono"}>{permission.id}</td>
+              <td className={'px-1'}>ID:</td>
+              <td className={'px-1 font-mono'}>{permission.id}</td>
             </tr>
             <tr>
-              <td className={"px-1"}>permission key:</td>
-              <td className={"px-1"}>{permission.permissionKey}</td>
+              <td className={'px-1'}>Permission Key:</td>
+              <td className={'px-1'}>{permission.permissionKey}</td>
             </tr>
             <tr>
-              <td className={"px-1"}>description:</td>
-              <td className={"px-1"}>{permission.description}</td>
+              <td className={'px-1'}>Description:</td>
+              <td className={'px-1'}>{permission.description}</td>
             </tr>
           </tbody>
         </table>
@@ -24,4 +24,5 @@ function PermissionDetail({ permission }: { permission: Permission }) {
     </>
   );
 }
+
 export default PermissionDetail;
