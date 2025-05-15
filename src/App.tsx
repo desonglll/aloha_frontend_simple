@@ -1,13 +1,18 @@
-import "./App.scss"
-import {RouterProvider} from "react-router";
+import "./App.scss";
+import { RouterProvider } from "react-router";
 import router from "./routes/AppRoutes.tsx";
-function App() {
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient();
+
+function App() {
   return (
     <>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

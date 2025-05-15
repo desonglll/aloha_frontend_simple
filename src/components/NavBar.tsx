@@ -1,25 +1,36 @@
-
 interface NavBarItem {
-    name: string,
-    path: string,
+  name: string;
+  path: string;
 }
-function NavBar(){
-    const navbarItems :NavBarItem[]= [
-        {
-            name: "Home",
-            path: "/",
-        }
-    ]
-    return (
-        <>
-            <div>
-                <ul className={"flex flex-row"}>
-                {navbarItems.map((item:NavBarItem) => (
-                    <li><a href={item.path}>{item.name}</a></li>
-                ))}
-                </ul>
-            </div>
-        </>
-    )
+function NavBar() {
+  const navbarItems: NavBarItem[] = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Tweet",
+      path: "/tweet",
+    },
+    {
+      name: "Permission",
+      path: "/permission",
+    },
+  ];
+  return (
+    <>
+      <div>
+        <ul className={"flex flex-row"}>
+          {navbarItems.map((item: NavBarItem) => (
+            <li key={item.path}>
+              <a className={"underline text-cyan-600 px-1"} href={item.path}>
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
 }
 export default NavBar;
