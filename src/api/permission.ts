@@ -19,3 +19,9 @@ export const getPermission = (id: string): Promise<AxiosResponse<ApiResponse<Per
 export const deletePermission = (id: string): Promise<AxiosResponse<ApiResponse<Permission>>> => {
   return apiClient.delete(`permissions/${id}`);
 };
+export const updatePermission = (
+  id: string,
+  permissionDTO: PermissionDTO
+): Promise<AxiosResponse<ApiResponse<Permission>>> => {
+  return apiClient.patch(`permissions/${id}`, permissionDTO);
+};

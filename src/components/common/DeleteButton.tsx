@@ -1,11 +1,13 @@
 import type { AxiosResponse } from 'axios';
 
 function DeleteButton({
+  buttonText,
   name,
   id,
   action,
   callback,
 }: {
+  buttonText: string | 'delete';
   name: string;
   id: string;
   action: (id: string) => Promise<AxiosResponse>;
@@ -35,7 +37,7 @@ function DeleteButton({
           }
         }}
       >
-        Delete {name}
+        {buttonText}
       </button>
     </>
   );

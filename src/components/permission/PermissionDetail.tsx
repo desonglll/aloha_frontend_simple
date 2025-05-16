@@ -1,6 +1,8 @@
-import type { Permission } from '../../types/entity.ts';
+import { useContext } from 'react';
+import { PermissionContext } from '../../contexts/PermissionContext.tsx';
 
-function PermissionDetail({ permission }: { permission: Permission }) {
+function PermissionDetail() {
+  const permission = useContext(PermissionContext);
   return (
     <>
       <div>

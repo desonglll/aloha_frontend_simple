@@ -1,31 +1,24 @@
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import type { Permission } from '../../types/entity.ts';
 import * as React from 'react';
+import { PermissionContext } from '../../contexts/PermissionContext.tsx';
 
 function PermissionForm({
   action,
-  initialId,
-  initialPermissionKey,
-  initialDescription,
   onSubmit,
 }: {
   action: string;
-  initialId: string;
-  initialPermissionKey: string;
-  initialDescription: string;
   onSubmit: (permission: Permission) => void;
 }) {
-  const [id] = useState(initialId);
-  const [permissionKey, setPermissionKey] = useState(initialPermissionKey);
-  const [description, setDescription] = useState(initialDescription);
+  const permission = useContext(PermissionContext);
+  const [localPermission, setLocalPermission] = useState(permission);
+  useEffect(() => {
+    setLocalPermission(permission);
+  }, [permission]);
+
   const submit = (event: React.FormEvent) => {
     event.preventDefault();
-    const permission: Permission = {
-      id,
-      permissionKey,
-      description,
-    };
-    onSubmit(permission);
+    onSubmit(localPermission);
   };
   return (
     <>
@@ -36,7 +29,7 @@ function PermissionForm({
               {action === 'Edit' && (
                 <tr>
                   <td className={'px-1'}>ID:</td>
-                  <td className={'px-1 font-mono'}>{initialId}</td>
+                  <td className={'px-1 font-mono'}>{localPermission.id}</td>
                 </tr>
               )}
               <tr>
@@ -46,8 +39,10 @@ function PermissionForm({
                     type={'text'}
                     name={'permissionKey'}
                     className={'border'}
-                    defaultValue={initialPermissionKey}
-                    onChange={event => setPermissionKey(event.target.value)}
+                    value={localPermission.permissionKey}
+                    onChange={e =>
+                      setLocalPermission(p => ({ ...p, permissionKey: e.target.value }))
+                    }
                   />
                 </td>
               </tr>
@@ -58,8 +53,8 @@ function PermissionForm({
                     type={'text'}
                     name={'description'}
                     className={'border'}
-                    defaultValue={initialDescription}
-                    onChange={event => setDescription(event.target.value)}
+                    value={localPermission.description}
+                    onChange={e => setLocalPermission(p => ({ ...p, description: e.target.value }))}
                   />
                 </td>
               </tr>
