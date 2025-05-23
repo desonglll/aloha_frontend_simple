@@ -20,6 +20,10 @@ function NavBar() {
       name: 'UserGroup',
       path: '/user_group',
     },
+    {
+      name: 'Role',
+      path: '/role',
+    },
   ];
   return (
     <>

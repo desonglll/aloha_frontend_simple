@@ -24,7 +24,7 @@ function UserGroupDetailPage() {
             name={'UserGroup'}
             id={id}
             action={deleteUserGroup}
-            callback={() => navigate('user_group')}
+            callback={() => navigate('/user_group')}
           />
           <UserGroupDetail />
         </UserGroupContext.Provider>

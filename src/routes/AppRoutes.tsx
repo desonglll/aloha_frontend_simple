@@ -10,6 +10,10 @@ import UserGroupPage from '../pages/user_group/UserGroupPage.tsx';
 import UserGroupDetailPage from '../pages/user_group/UserGroupDetailPage.tsx';
 import UserGroupEditPage from '../pages/user_group/UserGroupEditPage.tsx';
 import UserGroupCreatePage from '../pages/user_group/UserGroupCreatePage.tsx';
+import RolePage from '../pages/role/RolePage.tsx';
+import RoleCreatePage from '../pages/role/RoleCreatePage.tsx';
+import RoleDetailPage from '../pages/role/RoleDetailPage.tsx';
+import RoleEditPage from '../pages/role/RoleEditPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -64,6 +68,24 @@ const router = createBrowserRouter([
           {
             path: 'edit/:id',
             Component: UserGroupEditPage,
+          },
+        ],
+      },
+      {
+        path: 'role',
+        children: [
+          { index: true, Component: RolePage },
+          {
+            path: 'create',
+            Component: RoleCreatePage,
+          },
+          {
+            path: 'detail/:id',
+            Component: RoleDetailPage,
+          },
+          {
+            path: 'edit/:id',
+            Component: RoleEditPage,
           },
         ],
       },

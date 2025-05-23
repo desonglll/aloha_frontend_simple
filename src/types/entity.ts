@@ -26,3 +26,16 @@ export interface Tweet {
   updatedAt: string;
   userId: string;
 }
+
+export interface Role {
+  id: string;
+  roleName: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+export interface RoleDTO {
+  roleName: string;
+  description: string;
+}

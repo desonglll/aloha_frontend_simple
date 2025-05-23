@@ -24,7 +24,7 @@ function PermissionDetailPage() {
             name={'Permission'}
             id={id}
             action={deletePermission}
-            callback={() => navigate('permission')}
+            callback={() => navigate('/permission')}
           />
           <PermissionDetail />
         </PermissionContext.Provider>
