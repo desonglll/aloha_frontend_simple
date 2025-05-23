@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { UserGroupContext } from '../../contexts/UserGroupContext.tsx';
-// import dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 function UserGroupDetail() {
   const userGroup = useContext(UserGroupContext);
@@ -20,11 +20,11 @@ function UserGroupDetail() {
             </tr>
             <tr>
               <td className={'px-1'}>Created At:</td>
-              <td className={'px-1'}>{userGroup.createdAt}</td>
+              <td className={'px-1'}>{dayjs(userGroup.createdAt).format('YYYY-MM-DD HH:mm:ss')}</td>
             </tr>
             <tr>
               <td className={'px-1'}>Updated At:</td>
-              <td className={'px-1'}>{userGroup.updatedAt}</td>
+              <td className={'px-1'}>{dayjs(userGroup.updatedAt).format('YYYY-MM-DD HH:mm:ss')}</td>
             </tr>
           </tbody>
         </table>

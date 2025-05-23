@@ -7,7 +7,7 @@ function PermissionEdit() {
   const navigate = useNavigate();
   const submit = (permission: Permission) => {
     const permissionDTO: PermissionDTO = {
-      permissionKey: permission.permissionKey,
+      permissionName: permission.permissionName,
       description: permission.description,
     };
     updatePermission(permission.id, permissionDTO)

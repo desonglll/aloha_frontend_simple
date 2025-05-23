@@ -8,6 +8,8 @@ import PermissionDetailPage from '../pages/permission/PermissionDetailPage.tsx';
 import PermissionEditPage from '../pages/permission/PermissionEditPage.tsx';
 import UserGroupPage from '../pages/user_group/UserGroupPage.tsx';
 import UserGroupDetailPage from '../pages/user_group/UserGroupDetailPage.tsx';
+import UserGroupEditPage from '../pages/user_group/UserGroupEditPage.tsx';
+import UserGroupCreatePage from '../pages/user_group/UserGroupCreatePage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -52,8 +54,16 @@ const router = createBrowserRouter([
         children: [
           { index: true, Component: UserGroupPage },
           {
+            path: 'create',
+            Component: UserGroupCreatePage,
+          },
+          {
             path: 'detail/:id',
             Component: UserGroupDetailPage,
+          },
+          {
+            path: 'edit/:id',
+            Component: UserGroupEditPage,
           },
         ],
       },

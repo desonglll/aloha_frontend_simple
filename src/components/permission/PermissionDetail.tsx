@@ -14,7 +14,7 @@ function PermissionDetail() {
             </tr>
             <tr>
               <td className={'px-1'}>Permission Key:</td>
-              <td className={'px-1'}>{permission.permissionKey}</td>
+              <td className={'px-1'}>{permission.permissionName}</td>
             </tr>
             <tr>
               <td className={'px-1'}>Description:</td>

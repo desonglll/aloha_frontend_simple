@@ -1,5 +1,5 @@
-import PermissionCreate from '../../components/permission/PermissionCreate.tsx';
 import BackButton from '../../components/common/BackButton.tsx';
+import PermissionCreate from '../../components/permission/PermissionCreate.tsx';
 
 function PermissionCreatePage() {
   return (

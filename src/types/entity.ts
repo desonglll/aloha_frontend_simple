@@ -1,11 +1,11 @@
 export interface Permission {
   id: string;
-  permissionKey: string;
+  permissionName: string;
   description: string;
 }
 
 export interface PermissionDTO {
-  permissionKey: string | null;
+  permissionName: string | null;
   description: string | null;
 }
 

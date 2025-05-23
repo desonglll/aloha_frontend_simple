@@ -36,7 +36,7 @@ function PermissionTable() {
                   {permission.id}
                 </a>
               </td>
-              <td className={'px-1'}>{permission.permissionKey}</td>
+              <td className={'px-1'}>{permission.permissionName}</td>
               <td className={'px-1'}>{permission.description}</td>
               <td>
                 <DeleteButton

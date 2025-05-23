@@ -9,6 +9,7 @@ import { usePermission } from '../../hooks/usePermission.ts';
 
 function PermissionDetailPage() {
   const { id } = useParams();
+  // const [searchParams] = useSearchParams(); // ✅ 获取 searchParams
   const navigate = useNavigate();
   const permissionHook = usePermission();
   return (

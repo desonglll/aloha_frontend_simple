@@ -7,7 +7,7 @@ export function usePermission() {
   const { id } = useParams();
   const [permission, setPermission] = useState<Permission>({
     id: '',
-    permissionKey: '',
+    permissionName: '',
     description: '',
   });
 

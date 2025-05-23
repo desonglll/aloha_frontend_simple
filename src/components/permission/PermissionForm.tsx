@@ -33,15 +33,15 @@ function PermissionForm({
                 </tr>
               )}
               <tr>
-                <td className={'px-1'}>Permission Key:</td>
+                <td className={'px-1'}>Permission Name:</td>
                 <td className={'px-1'}>
                   <input
                     type={'text'}
-                    name={'permissionKey'}
+                    name={'permissionName'}
                     className={'border'}
-                    value={localPermission.permissionKey}
+                    value={localPermission.permissionName}
                     onChange={e =>
-                      setLocalPermission(p => ({ ...p, permissionKey: e.target.value }))
+                      setLocalPermission(p => ({ ...p, permissionName: e.target.value }))
                     }
                   />
                 </td>
